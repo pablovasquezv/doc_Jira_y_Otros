@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cl.banchile.starter</groupId>
+        <artifactId>bch-starter-springboot-java8</artifactId>
+        <version>1.0.6</version>
+    </parent>
+    <groupId>cl.banchile</groupId>
+    <artifactId>bchrest-administra-ingreso-operaciones</artifactId>
+    <version>1.0.84-SNAPSHOT</version>
+    <name>bchrest-administra-ingreso-operaciones</name>
+    <description>Componente de Integracion que permite orquestar las llamadas a los flujos de ingreso de operaciones    </description>
+    <dependencies>
+        <!-- Webflux - reactive web stack-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <!-- Utilidades -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- Spring Cloud Sleuth trazabilidad en trasporte (HTTP, AMQP, ...) -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+        <!-- Swagger UI - API docs -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+        </dependency>
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Libreria puntoventa -->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-ingreso-operacion-go-puntoventa-proxy</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+        <!-- Libreria Pojo Ingope-->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-administra-ingreso-operaciones</artifactId>
+            <version>1.0.73</version>
+        </dependency>
+        <!-- Libreria  Bizagi-->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-ejecuta-bizagi-workflowenginesoa</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- Libreria Instruccion Pago y Cobro -->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-ejecuta-movimientos-liquidaciones</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <!-- Libreria para realizar transacciones en la tabla sol_ope no -->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-consulta-proxy-ws-estsolope</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-consulta-movimientos-fondos-mutuos</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!---Libreria generar Guidtrx -->
+        <dependency>
+            <groupId>cl.banchile.librerias</groupId>
+            <artifactId>bchlib-tx-unique-id</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20200518</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
